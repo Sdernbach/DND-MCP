@@ -7,13 +7,29 @@ character management, dice rolling, and game mechanics.
 
 import json
 import os
+import sys
 from typing import Optional
+
+# Add the src directory to Python path for imports
+if __name__ == "__main__":
+    # When run directly, add parent directories to path
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    src_dir = os.path.dirname(current_dir)
+    root_dir = os.path.dirname(src_dir)
+    sys.path.insert(0, root_dir)
 
 from mcp.server.fastmcp import FastMCP
 
-from .character import Character
-from .dice import parse_modifiers_string, perform_roll, DiceModifier, FlatModifier
-from .constants import SKILL_ABILITIES, COMMON_MODIFIERS
+# Try relative imports first, fall back to absolute imports
+try:
+    from .character import Character
+    from .dice import parse_modifiers_string, perform_roll, DiceModifier, FlatModifier
+    from .constants import SKILL_ABILITIES, COMMON_MODIFIERS
+except ImportError:
+    # Fallback for when running as standalone script
+    from src.dnd_mcp.character import Character
+    from src.dnd_mcp.dice import parse_modifiers_string, perform_roll, DiceModifier, FlatModifier
+    from src.dnd_mcp.constants import SKILL_ABILITIES, COMMON_MODIFIERS
 
 # Create the MCP server
 server = FastMCP("dnd-character-server")
