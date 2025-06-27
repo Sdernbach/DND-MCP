@@ -2,6 +2,108 @@
 
 An MCP (Model Context Protocol) server for managing Dungeons & Dragons 5th Edition characters. This server provides tools for loading characters, performing dice rolls, skill checks, ability checks, saving throws, and managing character state.
 
+## Example
+
+**User:**  
+Let's play DND. Your character can be Thorin. His character sheet is at `examples\characters\thorin.json`.
+
+**LLM Player:**  
+I'd love to play D&D with you! Let me load Thorin's character sheet so I can roleplay as him properly.
+
+<details>
+<summary><strong>load_character</strong></summary>
+
+```http
+Request
+{
+  "file_path": "examples\\characters\\thorin.json"
+}
+
+Response
+Successfully loaded character: Thorin Ironforge (Level 5)
+```
+</details>
+
+<details>
+<summary><strong>get_character_info</strong></summary>
+
+```http
+Request
+{}
+
+Response
+{
+  "name": "Thorin Ironforge",
+  "nickname": null,
+  "race": "Dwarf",
+  "level": 5,
+  "classes": ["Fighter 5"],
+  "alignment": "lawful good",
+  "hit_points": { "max": 52, "current": 52 },
+  "armor_class": 18,
+  "ability_scores": {
+    "str": 16, "dex": 10, "con": 16, "int": 12, "wis": 14, "cha": 10
+  },
+  "proficiency_bonus": 3
+}
+```
+</details>
+
+Excellent! I'm ready to play as Thorin Ironforge, a stalwart level 5 Dwarf Fighter.  
+*Adjusts my gleaming chainmail and hefts my trusty warhammer*  
+**"Well met, friend! I am Thorin Ironforge of the Iron Hills, sworn defender of the innocent and enemy of all who would threaten the peace of these lands. My hammer has tasted the blood of many an orc and goblin, and my shield has turned aside countless blows meant for my companions."**  
+*Strokes my braided beard thoughtfully*  
+**"What adventure calls to us today? Are you the DM, or would you like me to take on that role as well? I'm ready for whatever tale awaits us!"**
+
+---
+
+**DM:**  
+You awake to find yourself in an unknown location. You appear to be underground in a large cave illuminated by glowing blue crystals. Your pack and weapons lay beside you but you have no idea how they or you arrived here. There is only one entrance to the room you are currently in. Make a perception check.
+
+**LLM Player:**  
+*Thorin's eyes snap open, instinctively reaching for his warhammer as he takes in the strange surroundings*  
+**"By Moradin's beard... where in the Nine Hells am I?"**  
+*He sits up slowly, his experienced warrior's instincts kicking in as he surveys the glowing crystal cave*  
+**"These crystals... I've never seen their like before. And how did I get here with all my gear intact?"**  
+*Thorin carefully gathers his equipment, strapping on his shield and hefting his warhammer, then focuses his senses to examine the cave more thoroughly*
+
+<details>
+<summary><strong>roll_skill_check</strong></summary>
+
+```http
+Request
+{
+  "skill": "perception"
+}
+Response
+{
+  "roll_name": "Perception Check",
+  "d20_roll": {
+    "result": 18,
+    "rolls": [18],
+    "type": "normal",
+    "used_roll": 18
+  },
+  "base_modifier": 5,
+  "flat_modifiers": [],
+  "dice_modifiers": [],
+  "total": 23,
+  "breakdown": "18 (d20) + 5 (base) = 23",
+  "skill": "Perception",
+  "ability": "WIS",
+  "ability_modifier": 2,
+  "proficiency_bonus": 3,
+  "is_proficient": true
+}
+```
+</details>
+
+Thorin's sharp eyes scan the cave with practiced precision, his dwarven heritage serving him well in these underground depths.  
+**"Hmm... a fine roll indeed - 23 total. My eyes are keen as ever, even in this strange place."**  
+*He speaks in a low, cautious tone*  
+**"Something's not right here. The way these crystals pulse with that blue light... it's almost rhythmic, like a heartbeat. And the air - it tastes different. Ancient, but not stale. There's magic at work here, I'd wager."**  
+What does my keen perception reveal about this mysterious crystal cave, friend? Do I spot any details about the entrance, hidden passages, signs of other creatures, or clues about how I might have arrived here?
+
 ## Features
 
 - **Character Management**: Load and save D&D 5e characters from JSON files
