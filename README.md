@@ -2,6 +2,8 @@
 
 An MCP (Model Context Protocol) server for managing Dungeons & Dragons 5th Edition characters. This server provides tools for loading characters, performing dice rolls, skill checks, ability checks, saving throws, and managing character state.
 
+The server uses the [dnd53_json_schema](https://brianwendt.github.io/dnd5e_json_schema/) defined for saving and loading characters.
+
 ## Example
 
 **User:**  
@@ -133,7 +135,7 @@ roll_skill_check("perception", "advantage")
 roll_skill_check("athletics", "advantage +2 bardic:1d8 guidance:1d4")
 
 # Multiple dice bonuses
-roll_saving_throw("wis", "bless:1d4 guidance:1d4")
+roll_saving_throw("wis", "bless:1d4")
 ```
 
 ## Installation
@@ -145,9 +147,22 @@ pip install -r requirements.txt
 
 2. Run the server:
 ```bash
-python character_server.py
+python main.py
 ```
 
+To use the server with Claude desktop, add the following to claude_desktop_config.json
+```
+{
+  "mcpServers": {
+    "dnd": {
+      "command": "python",
+      "args": [
+        "[Path to server.py]"
+      ]
+    }
+  }
+}
+```
 ## Available Tools
 
 ### Character Management
