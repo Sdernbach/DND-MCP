@@ -1,0 +1,40 @@
+{
+    "name": "Gandalf the Grey",
+    "player": {
+        "name": "Player One",
+        "id": null
+    },
+    "race": {
+        "name": "Human",
+        "subtype": "Variant"
+    },
+    "classes": [
+        {
+            "name": "Wizard",
+            "subtype": "School of Evocation",
+            "level": 20,
+            "hit_die": 6,
+            "spellcasting": "int"
+        }
+    ],
+    "alignment": "neutral good",
+    "hit_points": {
+        "max": 164,
+        "current": 164
+    },
+    "armor_class": {
+        "value": 17,
+        "description": "Robe of the Archmagi"
+    },
+    "ability_scores": {
+        "str": 10,
+        "dex": 14,
+        "con": 16,
+        "int": 20,
+        "wis": 18,
+        "cha": 14
+    },
+    "speed": {
+        "Walk": 30
+    }
+}

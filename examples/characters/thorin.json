@@ -1,0 +1,105 @@
+{
+    "name": "Thorin Ironforge",
+    "player": {
+        "name": "Player Two",
+        "id": null
+    },
+    "race": {
+        "name": "Dwarf",
+        "subtype": "Mountain Dwarf"
+    },
+    "classes": [
+        {
+            "name": "Fighter",
+            "subtype": "Champion",
+            "level": 5,
+            "hit_die": 10
+        }
+    ],
+    "alignment": "lawful good",
+    "hit_points": {
+        "max": 52,
+        "current": 52
+    },
+    "armor_class": {
+        "value": 18,
+        "description": "Plate Armor"
+    },
+    "ability_scores": {
+        "str": 16,
+        "dex": 10,
+        "con": 16,
+        "int": 12,
+        "wis": 14,
+        "cha": 10
+    },
+    "saving_throws": {
+        "str": true,
+        "con": true
+    },
+    "skills": {
+        "athletics": true,
+        "intimidation": true,
+        "perception": true
+    },
+    "speed": {
+        "Walk": 25
+    },
+    "weapon_proficiencies": [
+        "Simple Weapons",
+        "Martial Weapons"
+    ],
+    "armor_proficiencies": [
+        "Light Armor",
+        "Medium Armor", 
+        "Heavy Armor",
+        "Shields"
+    ],
+    "tool_proficiencies": [
+        "Smith's Tools",
+        "Brewer's Supplies"
+    ],
+    "weapons": [
+        {
+            "name": "Battleaxe",
+            "type": "Martial Melee",
+            "damage": "1d8",
+            "damage_type": "slashing",
+            "properties": ["versatile"]
+        },
+        {
+            "name": "Handaxe",
+            "type": "Simple Melee",
+            "damage": "1d6", 
+            "damage_type": "slashing",
+            "properties": ["light", "thrown"]
+        }
+    ],
+    "equipment": [
+        {
+            "name": "Plate Armor",
+            "type": "armor",
+            "ac": 18
+        },
+        {
+            "name": "Shield",
+            "type": "armor",
+            "ac": 2
+        },
+        {
+            "name": "Adventurer's Pack",
+            "type": "equipment"
+        }
+    ],
+    "languages": [
+        "Common",
+        "Dwarvish"
+    ],
+    "treasure": {
+        "pp": 0,
+        "ep": 0,
+        "gp": 125,
+        "sp": 15,
+        "cp": 30
+    }
+}
